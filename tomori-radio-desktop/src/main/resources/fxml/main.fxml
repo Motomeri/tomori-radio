@@ -3,15 +3,17 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.effect.GaussianBlur?>
 <BorderPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:id="root"
             fx:controller="io.github.motomeri.tomoriradio.desktop.controller.MainController"
             stylesheets="@../css/styles.css">
     <top>
-        <HBox fx:id="topToolbar" styleClass="toolbar" prefHeight="45">
+        <HBox fx:id="topToolbar" styleClass="toolbar" prefHeight="30">
             <HBox fx:id="buttonGroup" alignment="CENTER_LEFT" spacing="10">
                 <Button styleClass="toolbar-btn" onAction="#onHome">
                     <graphic>
-                        <ImageView fitHeight="45" fitWidth="45" preserveRatio="true">
+                        <ImageView fitHeight="30" fitWidth="30" preserveRatio="true">
                             <Image url="@/images/akari.png"/>
                         </ImageView>
                     </graphic>
@@ -19,7 +21,7 @@
 
                 <Button styleClass="toolbar-btn" onAction="#onTracks">
                     <graphic>
-                        <ImageView fitHeight="45" fitWidth="45" preserveRatio="true">
+                        <ImageView fitHeight="30" fitWidth="30" preserveRatio="true">
                             <Image url="@/images/akari.png"/>
                         </ImageView>
                     </graphic>
@@ -27,7 +29,7 @@
 
                 <Button styleClass="toolbar-btn" onAction="#onRequest">
                     <graphic>
-                        <ImageView fitHeight="45" fitWidth="45" preserveRatio="true">
+                        <ImageView fitHeight="30" fitWidth="30" preserveRatio="true">
                             <Image url="@/images/akari.png"/>
                         </ImageView>
                     </graphic>
@@ -35,7 +37,7 @@
 
                 <Button styleClass="toolbar-btn" onAction="#onSettings">
                     <graphic>
-                        <ImageView fitHeight="45" fitWidth="45" preserveRatio="true">
+                        <ImageView fitHeight="30" fitWidth="30" preserveRatio="true">
                             <Image url="@/images/akari.png"/>
                         </ImageView>
                     </graphic>
@@ -43,16 +45,24 @@
             </HBox>
 
             <Label fx:id="trackCountLabel" styleClass="track-count" HBox.hgrow="ALWAYS" alignment="CENTER_RIGHT"/>
-        </HBox>>
+        </HBox>
     </top>
 
     <center>
-        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="NEVER" styleClass="main-scroll">
-            <StackPane fx:id="background" styleClass="background">
-            </StackPane>
-            <StackPane fx:id="contentArea" styleClass="content-area">
-            </StackPane>
-        </ScrollPane>
+        <StackPane fx:id="backgroundContainer">
+            <ImageView fx:id="background" preserveRatio="true">
+                <effect>
+                    <GaussianBlur radius="2"/>
+                </effect>
+                <opacity>0.5</opacity>
+                <Image url="@/images/bg.png"/>
+            </ImageView>
+
+            <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="NEVER" styleClass="main-scroll">
+                <StackPane fx:id="contentArea" styleClass="content-area">
+                </StackPane>
+            </ScrollPane>
+        </StackPane>
     </center>
 
 </BorderPane>

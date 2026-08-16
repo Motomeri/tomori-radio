@@ -13,7 +13,9 @@ import kotlin.time.Instant
 class TrackManagementService {
 
     private val coreMusicLibrary = CoreMusicLibrary.builder()
-        .audioRepository(JsonFileRepository(File("audio-library.json"), AudioItemMapSerializer))
+        .audioRepository(JsonFileRepository(
+            File("/audio-library.json").apply { parentFile.mkdirs(); createNewFile() },
+            AudioItemMapSerializer))
         .build()
 
     private val trackIdsToAudioIds = mutableMapOf<Long, String>()

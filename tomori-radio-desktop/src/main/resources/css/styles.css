@@ -29,10 +29,8 @@
     -fx-background-color: transparent;
 }
 
-.background {
-    -fx-background-image: url("../images/background.jpg");
+.bg-container {
+    -fx-background-image: url("../images/bg.png");
     -fx-background-size: cover;
-    -fx-background-position: center;
-    -fx-effect: blur(4px);
-    -fx-background-color: rgba(255,255,255,0.5);
+    -fx-background-position: center center;
 }

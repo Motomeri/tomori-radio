@@ -60,14 +60,14 @@ class RequestedTrackService(
      * 移除一批已有曲目.
      */
     @Transactional
-    fun removeTracks(ids: Collection<Long>) = trackRepository.deleteAllById(ids)
+    fun removeTracksByIds(ids: Collection<Long>) = trackRepository.deleteAllById(ids)
 
     /**
      * 移除一批已有曲目.
      */
     @Transactional
     fun removeTracks(requestedTracks: Collection<RequestedTrack>) {
-        removeTracks(requestedTracks.map { it.id })
+        removeTracksByIds(requestedTracks.map { it.id })
     }
     /**
      * 获取所有曲目.
