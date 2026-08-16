@@ -8,6 +8,5 @@ import org.springframework.context.ApplicationEvent
  * @param trackId 要播放的已点曲目 ID
  */
 data class TrackPlaybackEvent(
-    val trackId: Long,
-    val timestamp: Long = System.currentTimeMillis()
+    val trackId: Long
 ) : ApplicationEvent(trackId)

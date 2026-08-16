@@ -1,11 +1,13 @@
 package io.github.motomeri.tomoriradio.core.track.service
 
+import io.github.motomeri.tomoriradio.core.schedule.event.ScheduleUpdatedEvent
 import io.github.motomeri.tomoriradio.core.schedule.service.MusicSlotService
 import io.github.motomeri.tomoriradio.core.schedule.service.ScheduleEngine
 import io.github.motomeri.tomoriradio.core.settings.service.SettingService
 import io.github.motomeri.tomoriradio.core.track.domain.ScheduledTrack.Companion.toDto
 import io.github.motomeri.tomoriradio.core.track.domain.ScheduledTrackEntity
 import io.github.oshai.kotlinlogging.KotlinLogging
+import org.springframework.context.ApplicationEventPublisher
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 import kotlin.time.Instant
@@ -22,7 +24,8 @@ class ScheduledTrackService(
     private val musicSlotService: MusicSlotService,
     private val settingService: SettingService,
     private val scheduledTrackRepository: ScheduledTrackRepository,
-    private val scheduleEngine: ScheduleEngine
+    private val scheduleEngine: ScheduleEngine,
+    private val eventPublisher: ApplicationEventPublisher
 ) {
 
     private val logger = KotlinLogging.logger {}
@@ -58,6 +61,8 @@ class ScheduledTrackService(
         scheduledTrackRepository.saveAll(scheduled.map {
             ScheduledTrackEntity(trackId = it.trackId, scheduledTime = it.scheduledTime)
         })
+
+        eventPublisher.publishEvent(ScheduleUpdatedEvent())
     }
 
     /**

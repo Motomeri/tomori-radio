@@ -1,0 +1,38 @@
+.root {
+    -fx-background-color: #f5f7fa;
+    -fx-font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+}
+
+.toolbar {
+    -fx-background-color: #ffffff;
+    -fx-padding: 8 20 8 20;
+}
+
+.track-count {
+}
+
+.toolbar-btn {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+}
+
+.main-scroll {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+.main-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+.content-area {
+    -fx-background-color: transparent;
+}
+
+.background {
+    -fx-background-image: url("../images/background.jpg");
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-effect: blur(4px);
+    -fx-background-color: rgba(255,255,255,0.5);
+}
