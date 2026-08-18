@@ -1,9 +1,9 @@
 package io.github.motomeri.tomoriradio.core.schedule.service
 
 import io.github.motomeri.tomoriradio.core.schedule.domain.MusicSlot
-import io.github.motomeri.tomoriradio.core.schedule.domain.TrackSchedule
+import io.github.motomeri.tomoriradio.core.schedule.domain.TrackScheduleResult
 import io.github.motomeri.tomoriradio.core.track.domain.RequestedTrack
-import io.github.motomeri.tomoriradio.core.track.domain.ScheduledTrack
+import io.github.motomeri.tomoriradio.core.schedule.domain.ScheduledTrack
 import org.springframework.stereotype.Component
 import java.time.DayOfWeek
 import java.time.LocalTime
@@ -84,7 +84,7 @@ class ScheduleEngine {
         newTracks: List<RequestedTrack>,
         now: Instant,
         interval: Duration
-    ): List<TrackSchedule> {
+    ): List<TrackScheduleResult> {
 
         // ---------- 辅助数据 ----------
         data class OccupiedInterval(val start: Instant, val end: Instant)
@@ -230,7 +230,7 @@ class ScheduleEngine {
         generateNextWeek()   // 生成第一周
 
         // ---------- 3. 排期新曲目 ----------
-        val scheduled = mutableListOf<TrackSchedule>()
+        val scheduled = mutableListOf<TrackScheduleResult>()
 
         for (track in newTracks) {
             var found = false
@@ -242,7 +242,7 @@ class ScheduleEngine {
                         found = true
                         freeMap.remove(entry.key)
                         val candidateTime = seg.start
-                        scheduled.add(TrackSchedule(track.id, candidateTime))
+                        scheduled.add(TrackScheduleResult(track.id, candidateTime))
 
                         // 计算保护区间的结束点
                         val protectedEnd = candidateTime + track.duration + interval

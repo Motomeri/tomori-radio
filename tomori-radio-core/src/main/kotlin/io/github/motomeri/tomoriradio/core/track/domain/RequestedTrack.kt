@@ -1,23 +1,24 @@
 package io.github.motomeri.tomoriradio.core.track.domain
 
+import java.net.URL
 import kotlin.time.Duration
 import kotlin.time.Duration.Companion.nanoseconds
 
 /**
  * 点歌曲目实体.
  *
- * @param id        曲目 ID
- * @param title     曲目标题
- * @param artist    曲目作者
- * @param length    曲目时长, 单位: ns
- * @param requester 点歌人
+ * @param id      曲目 ID
+ * @param title   曲目标题
+ * @param artist  曲目作者
+ * @param length  曲目时长, 单位: ns
+ * @param fileUrl 点歌人
  */
 data class RequestedTrack(
     var id: Long,
     var title: String,
     var artist: String,
     var length: Long,
-    var requester: String
+    var fileUrl: URL
 ) {
 
     /**
@@ -37,7 +38,7 @@ data class RequestedTrack(
      */
     companion object {
 
-        fun RequestedTrackEntity.toDto(): RequestedTrack = RequestedTrack(id ?: 0L, title, artist, length, requester)
+        fun RequestedTrackEntity.toDto(): RequestedTrack = RequestedTrack(id ?: 0L, title, artist, length, fileUrl)
 
     }
 

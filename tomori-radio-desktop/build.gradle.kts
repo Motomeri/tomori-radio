@@ -23,6 +23,7 @@ dependencies {
     implementation("org.openjfx:javafx-media:25.0.3")
     implementation("org.springframework.boot:spring-boot-starter")
     implementation("io.github.oshai:kotlin-logging-jvm:7.0.3")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
 
     implementation("net.transgressoft:music-commons-api:${musicCommonsVersion}")
     implementation("net.transgressoft:music-commons-core:${musicCommonsVersion}")

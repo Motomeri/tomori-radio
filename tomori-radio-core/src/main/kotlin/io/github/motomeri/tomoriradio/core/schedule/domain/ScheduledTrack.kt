@@ -1,4 +1,4 @@
-package io.github.motomeri.tomoriradio.core.track.domain
+package io.github.motomeri.tomoriradio.core.schedule.domain
 
 import kotlin.time.Instant
 

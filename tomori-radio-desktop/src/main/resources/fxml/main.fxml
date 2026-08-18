@@ -8,51 +8,13 @@
             fx:id="root"
             fx:controller="io.github.motomeri.tomoriradio.desktop.controller.MainController"
             stylesheets="@../css/styles.css">
-    <top>
-        <HBox fx:id="topToolbar" styleClass="toolbar" prefHeight="30">
-            <HBox fx:id="buttonGroup" alignment="CENTER_LEFT" spacing="10">
-                <Button styleClass="toolbar-btn" onAction="#onHome">
-                    <graphic>
-                        <ImageView fitHeight="30" fitWidth="30" preserveRatio="true">
-                            <Image url="@/images/akari.png"/>
-                        </ImageView>
-                    </graphic>
-                </Button>
 
-                <Button styleClass="toolbar-btn" onAction="#onTracks">
-                    <graphic>
-                        <ImageView fitHeight="30" fitWidth="30" preserveRatio="true">
-                            <Image url="@/images/akari.png"/>
-                        </ImageView>
-                    </graphic>
-                </Button>
-
-                <Button styleClass="toolbar-btn" onAction="#onRequest">
-                    <graphic>
-                        <ImageView fitHeight="30" fitWidth="30" preserveRatio="true">
-                            <Image url="@/images/akari.png"/>
-                        </ImageView>
-                    </graphic>
-                </Button>
-
-                <Button styleClass="toolbar-btn" onAction="#onSettings">
-                    <graphic>
-                        <ImageView fitHeight="30" fitWidth="30" preserveRatio="true">
-                            <Image url="@/images/akari.png"/>
-                        </ImageView>
-                    </graphic>
-                </Button>
-            </HBox>
-
-            <Label fx:id="trackCountLabel" styleClass="track-count" HBox.hgrow="ALWAYS" alignment="CENTER_RIGHT"/>
-        </HBox>
-    </top>
 
     <center>
-        <StackPane fx:id="backgroundContainer">
+        <StackPane fx:id="backgroundContainer" minWidth="0" minHeight="0">
             <ImageView fx:id="background" preserveRatio="true">
                 <effect>
-                    <GaussianBlur radius="2"/>
+                    <GaussianBlur radius="8"/>
                 </effect>
                 <opacity>0.5</opacity>
                 <Image url="@/images/bg.png"/>
@@ -64,5 +26,45 @@
             </ScrollPane>
         </StackPane>
     </center>
+
+    <top>
+        <HBox fx:id="topToolbar" styleClass="toolbar" prefHeight="20">
+            <HBox fx:id="buttonGroup" alignment="CENTER_LEFT" spacing="10">
+                <Button styleClass="toolbar-btn" onAction="#onHome">
+                    <graphic>
+                        <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
+                            <Image url="@/images/akari.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button styleClass="toolbar-btn" onAction="#onTracks">
+                    <graphic>
+                        <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
+                            <Image url="@/images/akari.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button styleClass="toolbar-btn" onAction="#onRequest">
+                    <graphic>
+                        <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
+                            <Image url="@/images/akari.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button styleClass="toolbar-btn" onAction="#onSettings">
+                    <graphic>
+                        <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
+                            <Image url="@/images/akari.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </HBox>
+
+            <Label fx:id="trackCountLabel" styleClass="track-count" HBox.hgrow="ALWAYS" alignment="CENTER_RIGHT"/>
+        </HBox>
+    </top>
 
 </BorderPane>

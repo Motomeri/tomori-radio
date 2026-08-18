@@ -1,7 +1,6 @@
 package io.github.motomeri.tomoriradio.core.schedule.service
 
 import io.github.motomeri.tomoriradio.core.schedule.Scheduler
-import io.github.motomeri.tomoriradio.core.track.service.ScheduledTrackService
 import io.github.oshai.kotlinlogging.KotlinLogging
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -11,10 +10,10 @@ import kotlin.time.Instant
 /**
  * 已排期曲目的定时播放通知服务.
  *
- * 该服务从 [io.github.motomeri.tomoriradio.core.track.service.ScheduledTrackService] 动态获取已排期曲目, 并在启动定时计划后按排期播放.
+ * 该服务从 [ScheduledTrackService] 动态获取已排期曲目, 并在启动定时计划后按排期播放.
  *
  * @see io.github.motomeri.tomoriradio.core.schedule.service.TrackPlaybackService
- * @see io.github.motomeri.tomoriradio.core.track.service.ScheduledTrackService
+ * @see ScheduledTrackService
  *
  * @author RikkaKawaii0612
  */

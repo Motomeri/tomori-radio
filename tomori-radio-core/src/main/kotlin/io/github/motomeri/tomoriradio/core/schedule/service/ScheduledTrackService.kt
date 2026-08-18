@@ -1,11 +1,10 @@
-package io.github.motomeri.tomoriradio.core.track.service
+package io.github.motomeri.tomoriradio.core.schedule.service
 
 import io.github.motomeri.tomoriradio.core.schedule.event.ScheduleUpdatedEvent
-import io.github.motomeri.tomoriradio.core.schedule.service.MusicSlotService
-import io.github.motomeri.tomoriradio.core.schedule.service.ScheduleEngine
 import io.github.motomeri.tomoriradio.core.settings.service.SettingService
-import io.github.motomeri.tomoriradio.core.track.domain.ScheduledTrack.Companion.toDto
-import io.github.motomeri.tomoriradio.core.track.domain.ScheduledTrackEntity
+import io.github.motomeri.tomoriradio.core.schedule.domain.ScheduledTrack.Companion.toDto
+import io.github.motomeri.tomoriradio.core.schedule.domain.ScheduledTrackEntity
+import io.github.motomeri.tomoriradio.core.track.service.RequestedTrackService
 import io.github.oshai.kotlinlogging.KotlinLogging
 import org.springframework.context.ApplicationEventPublisher
 import org.springframework.stereotype.Service

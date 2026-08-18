@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service
  * 外部可使用 Spring 的事件监听注解, 对 [TrackPlaybackEvent]
  * 进行监听.
  *
- * @see io.github.motomeri.tomoriradio.core.track.domain.ScheduledTrack
+ * @see io.github.motomeri.tomoriradio.core.schedule.domain.ScheduledTrack
  *
  * @author RikkaKawaii0612
  */

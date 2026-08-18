@@ -1,6 +1,7 @@
 package io.github.motomeri.tomoriradio.core.track.domain
 
 import jakarta.persistence.*
+import java.net.URL
 import kotlin.time.Duration
 import kotlin.time.Duration.Companion.nanoseconds
 
@@ -14,7 +15,7 @@ class RequestedTrackEntity(
     @Column(nullable = false, length = 200) var title: String,
     @Column(nullable = false, length = 100) var artist: String,
     @Column(nullable = false) var length: Long,
-    @Column(nullable = false, length = 100) var requester: String
+    @Column(nullable = false, length = 100, name = "file_url") var fileUrl: URL
 ) {
 
     /**

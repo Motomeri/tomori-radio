@@ -5,7 +5,7 @@
 
 .toolbar {
     -fx-background-color: #ffffff;
-    -fx-padding: 8 20 8 20;
+    -fx-padding: 4 8 4 8;
 }
 
 .track-count {
